@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Categories from './components/Categories';
+import { useEffect, useState } from 'react';
 
 const options = [
   {
@@ -46,9 +47,16 @@ const options = [
 
 function App() {
 
+  const [selectedCat, setSelectedCat] = useState([{ parent: "main", label: "Sports & Outdoor", value: 1 }])
+
+  useEffect(() => {
+    console.log('Confirmed categories:', selectedCat)
+  }, [selectedCat])
+  
+
   return (
-    <div className="App max-w-5xl m-auto h-screen flex items-center">
-      <Categories categories={options} />
+    <div className="App max-w-5xl m-auto h-screen flex flex-col justify-center items-start">
+      <Categories categories={options} selectedCat={selectedCat} setSelectedCat={setSelectedCat}/>
     </div>
   );
 }

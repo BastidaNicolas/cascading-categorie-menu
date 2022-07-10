@@ -1,11 +1,9 @@
 import { useState } from 'react'
 
-const Categories = ({ categories }) => {
+const Categories = ({ categories, selectedCat, setSelectedCat }) => {
 
   //containes the selected categories, used to check what should be opened
-  const [selected, setSelected] = useState([])
-
-  console.log(selected)
+  const [selected, setSelected] = useState(selectedCat)
 
   // checks if category has subcategories if it does then it creates a new submenu. It basicaly calls itself untill the category doesnt have children
   const hasChildren = (category, parent) => {
@@ -61,7 +59,8 @@ const Categories = ({ categories }) => {
   }
 
   return (
-    <div className='border-2 rounded flex flex-col w-full'>
+    <>
+      <div className='border-2 rounded flex flex-col w-full mb-5'>
       <div className='h-64 flex overflow-x-hidden'>
         <ul className='flex flex-col border-r-2 overflow-y-auto overflow-x-hidden max-w-[13.9375Rem] w-full'>
           {/* here goes main categories and all the subcat will be rendered using hasChildren() */}
@@ -86,7 +85,11 @@ const Categories = ({ categories }) => {
           hasChildren(category, category.label)
         ))}
       </div>
-    </div>
+      </div>
+      <button className='border-2 p-2' onClick={() => setSelectedCat(selected)}>
+        Confirm
+      </button>
+    </>
   )
 }
 
