@@ -55,7 +55,7 @@ function App() {
   
 
   return (
-    <div className="App max-w-5xl m-auto h-screen flex flex-col justify-center items-start">
+    <div className="App max-w-5xl m-auto h-screen flex flex-col justify-center items-start overflow-x-auto">
       <Categories categories={options} selectedCat={selectedCat} setSelectedCat={setSelectedCat}/>
     </div>
   );
