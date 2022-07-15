@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Category Menu
+
+![Screenshot_20220715_200029](https://user-images.githubusercontent.com/74965310/179322348-cfaf9dce-2919-4508-b1ee-ae9b50844121.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
